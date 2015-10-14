@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--VERSION 1.7-->
+<html>
+  <head>
+    <title>Pixel Penguins - Pixel Art Editor - By Milk</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="shortcut icon" href="img/icon.ico">
+  </head>
+  <body onload="window.resizeTo(1000, 570)">
+    <img id="drawIMG" src="#">
+    <br>
+    <table id="application" border="1">
+      <!---menu bar-->
+      <tr style="text-align:center;">
+        <td style="border:0;width:400px"><h1>Pixel Penguins - Pixel Art Editor</h1></td>
+        <td style="border:1;width:400px">
+          <table id="options">
+            <tr>
+              <td><input type="button" id="new" value="New" onclick="clearCanvas('new');"></td>
+              <td><a href="#" class="saveBtn" id="save" download="pix.png" onclick="downloadIMG()">Save</a></td>
+              <td><input type="button" id="undo" value="Undo" onclick="undoPaint();"></td>
+              <td><input type="button" id="redo" value="Redo" onclick="redoPaint();"></td>
+              <td><input type="button" id="clear" value="Clear" onclick="clearCanvas('clear');"></td>
+            </tr>
+            <tr>
+              <td colspan="2">Pixels: <input size="3" type="text" id="pxScale" value="16" onkeyup="scaleCanvas()"></td>
+              <td colspan="3"><input type="file" id="upload" accept="image/*" onchange="loadIMG();"></td>
+            </tr>
+          </table>
+        </td>
+        <td style="width:100px">
+          <select onchange="changeTheme(this.value);">
+              <option value="light">Theme: Light</option>
+              <option value="dark">Theme: Dark</option>
+              <option value="blue">Theme: Blue</option>
+              <option value="red">Theme: Red</option>
+            </select>
+        </td>
+      </tr>
+      <!--application-->
+      <tr>
+        <!--editor canvas-->
+        <td style="width:400px;border:none">
+          <canvas id="editor" width="400" height="400" onLoad="init();" style="cursor: url(img/pencil.cur)">
+            Browser not supported for paint editor :P
+          </canvas></td>
+        <!--color selection canvas-->
+        <td style="width:400px;border:none">
+          <canvas id="palette" width="400" height="400" onLoad="init();">
+            Browser not supported for the color editor :P
+          </canvas>
+        </td>
+        <!--color viewer canvas-->
+        <td style="width:100px;align:top;">
+          <form action="" id="settings">
+            <input type="button" value="Add Color" id="addColor" onclick="storeColor();">
+            <table id="savedColor">
+              <tr><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+              <tr><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+            </table><br/>
+            Color: <input size="10" id="textColor" name="textColor" maxLength="7" type="text" onkeyup="newTextColor();">
+            <canvas id="color_viewer" width="100" height="100" onLoad="init();">
+              Browser not supported for the color viewer :P
+            </canvas>
+            <strong>Tools</strong><br/>
+            <input type="radio" name="tools" id="pencil" onClick="changeTool();">Pencil<br/>
+            <input type="radio" name="tools" id="eraser" onClick="changeTool();">Eraser<br/>
+            <input type="radio" name="tools" id="dropper" onClick="changeTool();">Dropper<br/>
+            <br/>
+            <strong>Canvas</strong><br/>
+            <input value="Grid Off" type="button" name="gridTog" id="gridTog" onClick="gridToggle()" />
+            <input value="Invert" type="button" name="invert" id="invert" onClick="invertBG();" /><br />
+          </form>
+        </td>
+      </tr>
+    </table>
+    <script src="art.js"></script>
+  </body>
+</html>

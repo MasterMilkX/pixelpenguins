@@ -1,0 +1,12 @@
+* Add theme feature (night + day) -> [font + bg]  ^
+* Change background of canvas                     ^
+* Scalable pixels                                 ^
+* Change font (Sans Serif font, not Arial!!!)     ^
+* Color saver                                     ^
+* Resizable Window                                ^
+* Save/Load feature                               ^
+* Save settings
+* Undo/Redo hotkey
+* Hue slider
+* Side by side picture viewer
+* Layers

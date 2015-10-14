@@ -1,0 +1,23 @@
+TROUBLESHOOTING
+================
+
+If color palette not selecting color
+--------------------------------------
+1. Close Chrome and Pixel Penguin editor
+2. Right-click on the Pixel Penguin application
+3. Select properties
+4. Under target, replace current link with this:
+	"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --app=file://w-sch-stud-11/UserDesktops/hcps-charityml/Desktop/Web%20Design/other/Pixel%20Penguins/main.html"
+
+5. Apply, ok, and close properties window
+6. Open properties window again
+7. Under target, replace link with this:
+	"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files --app=file://w-sch-stud-11/UserDesktops/hcps-charityml/Desktop/Web%20Design/other/Pixel%20Penguins/main.html
+
+8. Start regular Chrome
+9. In the search bar, type in
+	chrome://version
+10. Under Command Line, it should read
+	"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files --app=file://w-sch-stud-11/UserDesktops/hcps-charityml/Desktop/Web%20Design/other/Pixel%20Penguins/main.html --flag-switches-begin --flag-switches-end
+
+11. If not, then try again, remembering to close out of chrome and the application
